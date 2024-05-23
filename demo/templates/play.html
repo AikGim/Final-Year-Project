@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Video</title>
+</head>
+<body>
+    <h1>Playing: {{ video_name }}</h1>
+    <div>
+        <form action="/results" method="get">
+            <label for="models">Select a model:</label>
+            <select name="model" id="model_select">
+                {% for model in models %}
+                <option value="{{ model }}">{{ model }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Run Model</button>
+        </form>
+    </div>
+    <video width="640" height="480" controls autoplay>
+        <source src="/video/{{ video_name }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>

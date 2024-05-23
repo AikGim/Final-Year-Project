@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepFake Detection Web Demo</title>
+</head>
+<body>
+    <h1>DeepFake Detection Web Demo</h1>
+    <form action="/video" method="get">
+        <label for="videos">Select a video:</label>
+        <select name="video" id="videos">
+            {% for video in videos %}
+            <option value="{{ video }}">{{ video }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Play Video</button>
+    </form>
+</body>
+</html>
